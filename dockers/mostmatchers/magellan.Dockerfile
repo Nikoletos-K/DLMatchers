@@ -1,6 +1,6 @@
 # FROM pytorch/pytorch:latest
-FROM ubuntu:22.04
-FROM python:3.8
+FROM ubuntu:19.04
+FROM python:3.7
 
 ENV PATH /opt/conda/bin:$PATH
 
@@ -21,4 +21,6 @@ ENV PATH /opt/conda/bin:$PATH
 ENV LD_LIBRARY_PATH /usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 # install Magellan
+RUN conda create -n p37 python=3.7 -y
+SHELL ["conda", "run", "-n", "p37", "/bin/bash", "-c"]
 RUN pip install -U numpy scipy py_entitymatching

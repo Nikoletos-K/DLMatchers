@@ -1,5 +1,6 @@
 # FROM pytorch/pytorch:latest
 FROM ubuntu:22.04
+FROM python:3.8
 
 ENV PATH /opt/conda/bin:$PATH
 
@@ -18,16 +19,6 @@ RUN wget  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
 
 ENV PATH /opt/conda/bin:$PATH
 ENV LD_LIBRARY_PATH /usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/extras/CUPTI/lib64:$LD_LIBRARY_PATH
-
-# # install GNEM
-RUN conda create -n p39 python=3.9 -y
-SHELL ["conda", "run", "-n", "p39", "/bin/bash", "-c"]
-RUN conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
-RUN pip list
-RUN pip install pandas pytorch_transformers tensorboard scikit-learn
-
-WORKDIR /methods
-RUN git clone https://github.com/nishadi/GNEM.git
 
 # install DeepMatcher
 RUN conda create -n deepmatcher python=3.6 -y
