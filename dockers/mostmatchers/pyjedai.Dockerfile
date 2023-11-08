@@ -22,7 +22,4 @@ ENV PATH /opt/conda/bin:$PATH
 ENV LD_LIBRARY_PATH /usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 # install pyJedAI
-RUN conda create -n p39 python=3.9 -y
-SHELL ["conda", "run", "-n", "p39", "/bin/bash", "-c"]
-WORKDIR /home/ntinos/DLMatchers/dockers/mostmatchers
 RUN pip install pyjedai
