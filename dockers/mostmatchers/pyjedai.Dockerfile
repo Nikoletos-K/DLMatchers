@@ -21,5 +21,11 @@ RUN wget  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
 ENV PATH /opt/conda/bin:$PATH
 ENV LD_LIBRARY_PATH /usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
+
+WORKDIR /pyjedai_scripts
+
+COPY ./test_pyjedai.py /pyjedai_scripts
 # install pyJedAI
 RUN pip install pyjedai
+
+CMD ["python", "test_pyjedai.py"]

@@ -7,9 +7,9 @@ This Dockerfile runs the following matching algorithms:
 * [Magellan](http://www.vldb.org/pvldb/vol9/p1197-pkonda.pdf)
 * [ZeroER](https://chu-data-lab.github.io/downloads/ZeroER-SIGMOD2020.pdf)
 
-To run one of the tools docker (go to `dockers` dir):
+To build one of the tools (go to `/dockers/mostmatchers/` dir):
 
-`docker build -t mostmatchers . -f ./mostmatchers/pyjedai.Dockerfile`
+`docker build -t mostmatchers:pyjedai . -f ./pyjedai.Dockerfile`
 
 To do so, build the Docker image with:
 
