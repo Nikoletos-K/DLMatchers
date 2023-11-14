@@ -1,5 +1,5 @@
 # FROM pytorch/pytorch:latest
-FROM ubuntu:22.04
+FROM nvidia/cuda:11.6.0-devel-ubuntu18.04 
 
 ENV PATH /opt/conda/bin:$PATH
 

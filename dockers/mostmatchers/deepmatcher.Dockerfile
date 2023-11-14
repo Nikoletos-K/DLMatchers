@@ -1,6 +1,4 @@
-# FROM pytorch/pytorch:latest
-FROM ubuntu:22.04
-FROM python:3.8
+FROM ubuntu:19.04
 
 ENV PATH /opt/conda/bin:$PATH
 

@@ -1,4 +1,3 @@
-# FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
 FROM ubuntu:22.04
 
 ENV PATH /opt/conda/bin:$PATH
