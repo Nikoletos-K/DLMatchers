@@ -26,7 +26,7 @@ ENV LD_LIBRARY_PATH /usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/extras/CUPTI
 RUN conda create -n p39 python=3.9 -y
 SHELL ["conda", "run", "-n", "p39", "/bin/bash", "-c"]
 
-WORKDIR /pyjedai_scripts
-COPY ./test_pyjedai.py /pyjedai_scripts
+# WORKDIR /pyjedai_scripts
+# COPY ./test_pyjedai.py /pyjedai_scripts
 RUN pip install --use-pep517 pyjedai 
-CMD ["python", "test_pyjedai.py --data_dir=../data/abt_buy"]
+# CMD ["python", "test_pyjedai.py --data_dir=../data/abt_buy"]
