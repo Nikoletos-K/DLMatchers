@@ -15,7 +15,7 @@ for dockerfile in "${dockerfile_names[@]}"; do
     container_name=$(basename "${dockerfile}" | sed 's/\.Dockerfile//')
 
     # Build Docker container
-    docker build --no-cache -t "${container_name}" -f "${dockerfile}" .
+    docker build -t "${container_name}" -f "${dockerfile}" .
 
     echo "Container '${container_name}' built successfully."
 done
