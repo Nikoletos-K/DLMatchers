@@ -1,0 +1,3 @@
+Empty DataFrame
+Columns: [_id, ltable_id, rtable_id, ltable_http://www.okkam.org/ontology_restaurant1.owl#street, ltable_http://www.okkam.org/ontology_restaurant1.owl#name, rtable_http://www.okkam.org/ontology_restaurant2.owl#street, rtable_http://www.okkam.org/ontology_restaurant2.owl#name]
+Index: []

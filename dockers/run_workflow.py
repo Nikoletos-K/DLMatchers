@@ -18,6 +18,11 @@ algorithm_arguments = {
     "magellan" : magellan_arguments
 }
 
+conda_env = {
+    "pyjedai" : "p39",
+    "magellan": "p37"
+}
+
 def arguments_to_dict(environment_arguments : dict, script_arguments : dict):
     environment_dict = vars(environment_arguments)
     script_dict = {}
@@ -77,7 +82,7 @@ def run_script_in_docker(algorithm : str,
     initialize_file(file_path=output_path)
     container = client.containers.run(
         image=image_tag,
-        command=["conda", "run", "--name", "p39", "python", "/app/script.py"] + command,
+        command=["conda", "run", "--name", conda_env[algorithm], "python", "/app/script.py"] + command,
         # command=["tail", "-f", "/dev/null"],
         remove=False,
         detach=False,
