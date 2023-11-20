@@ -77,7 +77,8 @@ def run_script_in_docker(algorithm : str,
     initialize_file(file_path=output_path)
     container = client.containers.run(
         image=image_tag,
-        command=["python", "/app/script.py"] + command,
+        command=["conda", "run", "--name", "p39", "python", "/app/script.py"] + command,
+        # command=["tail", "-f", "/dev/null"],
         remove=False,
         detach=False,
         tty=True,
@@ -88,14 +89,6 @@ def run_script_in_docker(algorithm : str,
     
     # container.wait()
     # output = container.logs().decode('utf-8')
-    
-    # print(output)
-
-def read_output_file(output_file):
-    # Read the content from the output file
-    with open(output_file, 'r') as f:
-        content = f.read()
-    return content
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Algorithm script's arguments")
