@@ -59,7 +59,6 @@ def main():
     
     with open('app/output.txt', 'w') as file:
         file.write(blocking_output)
-    print("Hello")
 
 if __name__ == "__main__":
     main()
